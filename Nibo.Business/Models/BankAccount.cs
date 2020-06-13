@@ -2,7 +2,8 @@
 {
     public class BankAccount
     {
-        public int AccountId { get; set; }
+        public int BankId { get; set; }
+        public int AcctId { get; set; }
         public AccountType AccountType { get; set; }
     }
 }

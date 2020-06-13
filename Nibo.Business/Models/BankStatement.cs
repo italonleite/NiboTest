@@ -8,6 +8,8 @@ namespace Nibo.Business.Models
     {
         public SignOn SignOn { get; set; }
 
+        public Status Status { get; set; }
+
         public string Currency { get; set; }
 
         public BankAccount BankAccount { get; set; }
