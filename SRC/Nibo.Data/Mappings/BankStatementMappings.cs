@@ -28,6 +28,8 @@ namespace Nibo.Data.Mappings
             builder.HasMany(t => t.Transactions)
                 .WithOne(b => b.BankStatement)
                 .HasForeignKey(b => b.BankStatementId);
+
+            builder.ToTable("BankStatements");
         }
     }
 }

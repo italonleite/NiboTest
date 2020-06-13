@@ -13,7 +13,8 @@ namespace Nibo.Data.Context
         { }
 
         public DbSet<BankStatement> BankStatements { get; set; }
-      
+        public DbSet<Transaction> Transactions { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

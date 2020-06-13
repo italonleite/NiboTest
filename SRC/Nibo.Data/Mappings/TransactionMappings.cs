@@ -31,7 +31,9 @@ namespace Nibo.Data.Mappings
 
             builder.HasOne(b => b.BankStatement)
                 .WithMany(t => t.Transactions);
-                
+
+            builder.ToTable("Transactions");
+
         }
     }
 }
