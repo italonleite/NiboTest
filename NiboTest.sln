@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nibo.Data", "SRC\Nibo.Data\Nibo.Data.csproj", "{63DA8E7C-127C-4923-A56B-4EC063960CF6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nibo.Business", "Nibo.Business\Nibo.Business.csproj", "{0BC7F130-6DF8-444F-94C0-214E96EE3B79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nibo.App", "SRC\Nibo.App\Nibo.App.csproj", "{39C0A383-B53D-47A6-AA38-088AB43453F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nibo.App", "SRC\Nibo.App\Nibo.App.csproj", "{39C0A383-B53D-47A6-AA38-088AB43453F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nibo.Business", "SRC\Nibo.Business\Nibo.Business.csproj", "{B1D229A0-9E02-45C6-BB25-51103D23C4CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39C0A383-B53D-47A6-AA38-088AB43453F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39C0A383-B53D-47A6-AA38-088AB43453F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39C0A383-B53D-47A6-AA38-088AB43453F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39C0A383-B53D-47A6-AA38-088AB43453F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1D229A0-9E02-45C6-BB25-51103D23C4CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D229A0-9E02-45C6-BB25-51103D23C4CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D229A0-9E02-45C6-BB25-51103D23C4CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D229A0-9E02-45C6-BB25-51103D23C4CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

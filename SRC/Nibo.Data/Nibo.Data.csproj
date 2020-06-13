@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Nibo.Business\Nibo.Business.csproj" />
+    <ProjectReference Include="..\Nibo.Business\Nibo.Business.csproj" />
   </ItemGroup>
 
 </Project>
