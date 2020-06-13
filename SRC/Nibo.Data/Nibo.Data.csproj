@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="microsoft.entityframeworkcore" Version="3.1.5" />
     <PackageReference Include="microsoft.entityframeworkcore.Relational" Version="3.1.5" />
     <PackageReference Include="microsoft.entityframeworkcore.SQlServer" Version="3.1.5" />
