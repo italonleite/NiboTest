@@ -10,8 +10,8 @@ using Nibo.Data.Context;
 namespace Nibo.Data.Migrations
 {
     [DbContext(typeof(MeuDbContext))]
-    [Migration("20200613171906_inicio")]
-    partial class inicio
+    [Migration("20200613190213_novo")]
+    partial class novo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,48 +42,6 @@ namespace Nibo.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BankStatements");
-                });
-
-            modelBuilder.Entity("Nibo.Business.Models.SignOn", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("SIGONID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("DateServer")
-                        .HasColumnName("DTSERVER")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("Language")
-                        .HasColumnName("LANGUAGE")
-                        .HasColumnType("varchar(3)");
-
-                    b.Property<int?>("StatusCode")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StatusCode");
-
-                    b.ToTable("SignOn");
-                });
-
-            modelBuilder.Entity("Nibo.Business.Models.Status", b =>
-                {
-                    b.Property<int>("Code")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("CODE")
-                        .HasColumnType("integer")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Severity")
-                        .HasColumnName("SEVERITY")
-                        .HasColumnType("VARCHAR(5)");
-
-                    b.HasKey("Code");
-
-                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("Nibo.Business.Models.Transaction", b =>
@@ -117,13 +75,6 @@ namespace Nibo.Data.Migrations
                     b.HasIndex("BankStatementId");
 
                     b.ToTable("Transactions");
-                });
-
-            modelBuilder.Entity("Nibo.Business.Models.SignOn", b =>
-                {
-                    b.HasOne("Nibo.Business.Models.Status", "Status")
-                        .WithMany()
-                        .HasForeignKey("StatusCode");
                 });
 
             modelBuilder.Entity("Nibo.Business.Models.Transaction", b =>

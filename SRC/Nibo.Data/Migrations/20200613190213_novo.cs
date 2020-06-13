@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Nibo.Data.Migrations
 {
-    public partial class inicio : Migration
+    public partial class novo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,19 +19,6 @@ namespace Nibo.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BankStatements", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Status",
-                columns: table => new
-                {
-                    CODE = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SEVERITY = table.Column<string>(type: "VARCHAR(5)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Status", x => x.CODE);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,31 +43,6 @@ namespace Nibo.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "SignOn",
-                columns: table => new
-                {
-                    SIGONID = table.Column<Guid>(nullable: false),
-                    StatusCode = table.Column<int>(nullable: true),
-                    DTSERVER = table.Column<DateTime>(type: "datetime", nullable: false),
-                    LANGUAGE = table.Column<string>(type: "varchar(3)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SignOn", x => x.SIGONID);
-                    table.ForeignKey(
-                        name: "FK_SignOn_Status_StatusCode",
-                        column: x => x.StatusCode,
-                        principalTable: "Status",
-                        principalColumn: "CODE",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SignOn_StatusCode",
-                table: "SignOn",
-                column: "StatusCode");
-
             migrationBuilder.CreateIndex(
                 name: "IX_Transactions_BankStatementId",
                 table: "Transactions",
@@ -90,13 +52,7 @@ namespace Nibo.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SignOn");
-
-            migrationBuilder.DropTable(
                 name: "Transactions");
-
-            migrationBuilder.DropTable(
-                name: "Status");
 
             migrationBuilder.DropTable(
                 name: "BankStatements");
