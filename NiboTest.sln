@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nibo.Data", "SRC\Nibo.Data\Nibo.Data.csproj", "{63DA8E7C-127C-4923-A56B-4EC063960CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nibo.Business", "Nibo.Business\Nibo.Business.csproj", "{0BC7F130-6DF8-444F-94C0-214E96EE3B79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DA8E7C-127C-4923-A56B-4EC063960CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC7F130-6DF8-444F-94C0-214E96EE3B79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8272571B-619F-475C-97C1-EED979BA9E9D}
+	EndGlobalSection
+EndGlobal
