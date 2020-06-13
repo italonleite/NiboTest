@@ -6,8 +6,8 @@ namespace Nibo.Business.Models
 {
     public enum Type
     {
-        CREDIT,
-        DEBIT,
+        CREDIT = 1,
+        DEBIT = 2,
         OTHER
     }
 }
