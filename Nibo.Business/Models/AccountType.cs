@@ -1,10 +1,10 @@
 ﻿namespace Nibo.Business.Models
 {
-    public enum AccountType
-    {
+    //public enum AccountType
+    //{
         
-        CHECKING
+    //    CHECKING = 1
        
        
-    }
+    //}
 }
