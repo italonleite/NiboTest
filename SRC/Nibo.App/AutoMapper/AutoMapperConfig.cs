@@ -13,7 +13,7 @@ namespace Nibo.App.AutoMapper
         public AutoMapperConfig()
         {
 
-            CreateMap<BankStatement, BankSatatementViewModel>().ReverseMap();
+            CreateMap<BankStatement, BankStatementViewModel>().ReverseMap();
             CreateMap<Transaction, TransactionViewModel>().ReverseMap();
         }
     }

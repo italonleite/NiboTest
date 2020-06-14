@@ -8,7 +8,7 @@ namespace Nibo.Business.Interfaces
 {
     public interface IBankStatementRepository : IRepository<BankStatement>
     {
-        
+        Task<BankStatement> ObterBankStatementTransaction(Guid id);
     }
     
 }

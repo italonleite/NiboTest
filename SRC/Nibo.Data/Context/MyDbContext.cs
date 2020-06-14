@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Nibo.Data.Context
 {
-    public class MeuDbContext : DbContext
+    public class MyDbContext : DbContext
     {
-        public MeuDbContext(DbContextOptions<MeuDbContext> options)
+        public MyDbContext(DbContextOptions<MyDbContext> options)
       : base(options)
         { }
 
@@ -19,7 +19,7 @@ namespace Nibo.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeuDbContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
     }

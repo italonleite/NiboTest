@@ -14,7 +14,7 @@ namespace Nibo.Data.Mappings
             builder.HasKey(t => t.Id);
 
             builder.Property(t => t.Type)
-               .HasColumnType("varchar(10)")
+               .HasColumnType("integer")
                .HasColumnName("TRNTYPE");
 
             builder.Property(t => t.TransactionPostDate)

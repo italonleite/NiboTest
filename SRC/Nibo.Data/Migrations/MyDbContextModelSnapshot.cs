@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nibo.Data.Context;
 
 namespace Nibo.Data.Migrations
 {
-    [DbContext(typeof(MeuDbContext))]
-    [Migration("20200613190213_novo")]
-    partial class novo
+    [DbContext(typeof(MyDbContext))]
+    partial class MyDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,10 +63,9 @@ namespace Nibo.Data.Migrations
                         .HasColumnName("DTPOSTED")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
+                    b.Property<int>("Type")
                         .HasColumnName("TRNTYPE")
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

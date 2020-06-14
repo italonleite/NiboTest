@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Nibo.Data.Migrations
 {
-    public partial class novo : Migration
+    public partial class v3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,7 @@ namespace Nibo.Data.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     BankStatementId = table.Column<Guid>(nullable: false),
-                    TRNTYPE = table.Column<string>(type: "varchar(10)", nullable: false),
+                    TRNTYPE = table.Column<int>(type: "integer", nullable: false),
                     DTPOSTED = table.Column<DateTime>(type: "datetime", nullable: false),
                     TRNAMT = table.Column<decimal>(type: "decimal(5,2)", nullable: false),
                     MEMO = table.Column<string>(type: "varchar(100)", nullable: true)

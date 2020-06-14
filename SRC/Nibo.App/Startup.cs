@@ -30,13 +30,19 @@ namespace Nibo.App
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<MeuDbContext>(options =>
+            services.AddDbContext<MyDbContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IBankStatementRepository, BankStatementRepository>();
                
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddDbContext<teste>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("teste")));
+
+            services.AddDbContext<xyz>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("xyz")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

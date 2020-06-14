@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Nibo.App.ViewModel.BankStatementViewModel>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+    <div>
+
+
+        @foreach (var item in Model)
+        {
+
+            <ul class="list-group">
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
+                <ul class="list-group">
+                    <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.Transactions)</li>
+                </ul>
+            </ul>
+
+        }
+
+    <div>
+      @*<partial name="../Transactions/_ListaTransaction" model="@Model." />*@ 
+    </div>
+    </div>
+

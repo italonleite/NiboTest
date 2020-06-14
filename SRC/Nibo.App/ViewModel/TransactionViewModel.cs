@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Nibo.App.ViewModel
@@ -10,7 +11,7 @@ namespace Nibo.App.ViewModel
 
         public Guid BankStatementId { get; set; }
 
-        public Type Type { get; set; }
+        public int Type { get; set; }
 
         public DateTime TransactionPostDate { get; set; }
 
@@ -18,6 +19,8 @@ namespace Nibo.App.ViewModel
 
         public string Memo { get; set; }
 
-        public BankSatatementViewModel BankStatement { get; set; }
+        public BankStatementViewModel BankStatement { get; set; }
+
+        
     }
 }

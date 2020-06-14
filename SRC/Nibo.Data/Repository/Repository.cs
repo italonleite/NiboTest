@@ -11,10 +11,10 @@ namespace Nibo.Data.Repository
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
     {
-        protected readonly MeuDbContext Db;
+        protected readonly MyDbContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        protected Repository(MeuDbContext db)
+        protected Repository(MyDbContext db)
         {
             Db = db;
             DbSet = db.Set<TEntity>();
