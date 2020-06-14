@@ -26,7 +26,7 @@ namespace Nibo.App.Controllers
         // GET: BankStatements
         public async Task<IActionResult> Index()
         {
-            return View(_mapper.Map<IEnumerable<BankStatementViewModel>>(await _bankStatementRepository.ObterTodos()));
+            return View(_mapper.Map<IEnumerable<BankStatementViewModel>>(await _bankStatementRepository.ObterBankStatementTransaction()));
            
         }
 

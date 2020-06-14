@@ -4,6 +4,7 @@ using Nibo.Business.Models;
 using Nibo.Data.Context;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,13 +15,16 @@ namespace Nibo.Data.Repository
         public BankStatementRepository(MyDbContext context) : base(context)
         { 
         }
-            public async Task<BankStatement> ObterBankStatementTransaction(Guid id)
-            {
-                return await Db.BankStatements.AsNoTracking()
-                    .Include(t => t.Transactions)
-                    .FirstOrDefaultAsync(c => c.Id == id);
-            }
-        }      
+
+        public async Task<IEnumerable<BankStatement>> ObterBankStatementTransaction()
+        {
+            return await Db.BankStatements.AsNoTracking().Include(f => f.Transactions)
+               .ToListAsync();
+
+        }
+
+       
+    }      
 
     }
 

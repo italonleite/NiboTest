@@ -14,14 +14,17 @@
         @foreach (var item in Model)
         {
 
-            <ul class="list-group">
-                <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
-                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
-                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
-                <ul class="list-group">
-                    <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.Transactions)</li>
-                </ul>
-            </ul>
+        <ul class="list-group">
+            <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
+            <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
+            <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
+                <li class="list-group-item">Transactions
+                    <ul class="list-group">
+                        <li class="list-group-item">Transaction 1 : Transaction 1 </li>
+                        <li class="list-group-item">Transaction 2 : Transaction 2 </li>
+                    </ul>
+                </li>
+        </ul>
 
         }
 
