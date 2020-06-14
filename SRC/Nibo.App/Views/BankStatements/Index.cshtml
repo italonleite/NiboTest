@@ -4,32 +4,92 @@
 
 @{
     ViewData["Title"] = "Index";
+
 }
 
 
+    <div style="float: left">
 
-    <div>
+        <div class="form-group">
+            <label class="control-label"> BankStatement OFX Upload</label>
 
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="ImagemUpload">
+                <label data-browse="Procurar" style="width: 400px" class="custom-file-label" for="ImagemUpload"></label>
+                <label style="display: none" id="img_nome"></label>
+            </div>
+
+
+        </div>
 
         @foreach (var item in Model)
         {
+            <strong>BankStatements</strong>
+            <ul class="list-group col-md-10">
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
+                <li class="list-group-item">
+                    <strong>Transactions</strong>
+                    @foreach (var t in item.Transactions)
+                    {
 
-        <ul class="list-group">
+                        <ul class="list-group">
+
+                            <li class="list-group-item">Type: @Html.DisplayFor(model => t.Type) </li>
+                            <li class="list-group-item">TransactionPostDate  : @Html.DisplayFor(model => t.TransactionPostDate))</li>
+                            <li class="list-group-item">Ammount  : @Html.DisplayFor(model => t.Amount))</li>
+                            <li class="list-group-item">Memo  : @Html.DisplayFor(model => t.Memo)) </li>
+
+                        </ul>
+                    }
+                </li>
+            </ul>
+
+        }
+    </div>
+
+<div style="float: right">
+
+    <div class="form-group">
+        <label class="control-label"> BankStatement OFX Upload</label>
+
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ImagemUpload">
+            <label data-browse="Procurar" style="width: 400px" class="custom-file-label" for="ImagemUpload"></label>
+            <label style="display: none" id="img_nome"></label>
+        </div>
+
+
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <strong>BankStatements</strong>
+        <ul class="list-group col-md-10">
             <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
             <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
             <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
-                <li class="list-group-item">Transactions
+            <li class="list-group-item">
+                <strong>Transactions</strong>
+                @foreach (var t in item.Transactions)
+                {
+
                     <ul class="list-group">
-                        <li class="list-group-item">Transaction 1 : Transaction 1 </li>
-                        <li class="list-group-item">Transaction 2 : Transaction 2 </li>
+
+                        <li class="list-group-item">Type: @Html.DisplayFor(model => t.Type) </li>
+                        <li class="list-group-item">TransactionPostDate  : @Html.DisplayFor(model => t.TransactionPostDate))</li>
+                        <li class="list-group-item">Ammount  : @Html.DisplayFor(model => t.Amount))</li>
+                        <li class="list-group-item">Memo  : @Html.DisplayFor(model => t.Memo)) </li>
+
                     </ul>
-                </li>
+
+                }
+            </li>
         </ul>
 
-        }
+    }
 
-    <div>
-      @*<partial name="../Transactions/_ListaTransaction" model="@Model." />*@ 
-    </div>
-    </div>
+
+</div>
 

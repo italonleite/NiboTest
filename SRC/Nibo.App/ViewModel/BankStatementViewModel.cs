@@ -1,4 +1,5 @@
-﻿using Nibo.Business.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Nibo.Business.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,6 +14,8 @@ namespace Nibo.App.ViewModel
         public Guid Id { get; set; }
 
         public string Name { get; set; }
+        
+        public IFormFile Ofx { get; set; }
 
         public DateTime StatementStart { get; set; }
 
