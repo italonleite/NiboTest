@@ -48,48 +48,50 @@
 
     }
 </div>
+<div class="row col-md-2" style="float: left;">
+    <input type="submit" value="Conciliar" class="btn btn-primary" />
+</div>
+    <div class="row col-md-5" style="float: right;">
 
-<div class="row col-md-5"  style="float: right;">
+        <div class="form-group">
+            <label class="control-label"> BankStatement OFX Upload</label>
 
-    <div class="form-group">
-        <label class="control-label"> BankStatement OFX Upload</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="OfxUpload">
+                <label data-browse="Procurar" style="width: 400px" class="custom-file-label" for="OfxUpload"></label>
+                <input type="submit" value="Enviar" class="btn btn-primary" />
+            </div>
 
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="OfxUpload">
-            <label data-browse="Procurar" style="width: 400px" class="custom-file-label" for="OfxUpload"></label>
-            <input type="submit" value="Enviar" class="btn btn-primary" />
+
         </div>
+
+        @foreach (var item in Model)
+        {
+            <strong>BankStatements</strong>
+            <ul class="list-group">
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
+                <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
+                <li class="list-group-item">
+                    <strong>Transactions</strong>
+                    @foreach (var t in item.Transactions)
+                    {
+
+                        <ul class="list-group">
+
+                            <li class="list-group-item">Type: @Html.DisplayFor(model => t.Type) </li>
+                            <li class="list-group-item">TransactionPostDate  : @Html.DisplayFor(model => t.TransactionPostDate))</li>
+                            <li class="list-group-item">Ammount  : @Html.DisplayFor(model => t.Amount))</li>
+                            <li class="list-group-item">Memo  : @Html.DisplayFor(model => t.Memo)) </li>
+
+                        </ul>
+
+                    }
+                </li>
+            </ul>
+
+        }
 
 
     </div>
-
-    @foreach (var item in Model)
-    {
-        <strong>BankStatements</strong>
-        <ul class="list-group">
-            <li class="list-group-item">@Html.DisplayNameFor(model => item.Name) : @Html.DisplayFor(model => item.Name) </li>
-            <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementStart): @Html.DisplayFor(model => item.StatementStart)</li>
-            <li class="list-group-item">@Html.DisplayNameFor(model => item.StatementEnd) : @Html.DisplayFor(model => item.StatementEnd)</li>
-            <li class="list-group-item">
-                <strong>Transactions</strong>
-                @foreach (var t in item.Transactions)
-                {
-
-                    <ul class="list-group">
-
-                        <li class="list-group-item">Type: @Html.DisplayFor(model => t.Type) </li>
-                        <li class="list-group-item">TransactionPostDate  : @Html.DisplayFor(model => t.TransactionPostDate))</li>
-                        <li class="list-group-item">Ammount  : @Html.DisplayFor(model => t.Amount))</li>
-                        <li class="list-group-item">Memo  : @Html.DisplayFor(model => t.Memo)) </li>
-
-                    </ul>
-
-                }
-            </li>
-        </ul>
-
-    }
-
-
-</div>
 
