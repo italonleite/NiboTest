@@ -8,7 +8,9 @@ namespace Nibo.Business.Interfaces
 {
     public interface IBankStatementRepository : IRepository<BankStatement>
     {
-        Task<IEnumerable<BankStatement>> ObterBankStatementTransaction();
+        void RemoveRecords();
+        Task RemoveDuplicates(IEnumerable<Transaction> transactions);
+        Task<IEnumerable<BankStatement>> GetBankStatementTransactions();
     }
     
 }

@@ -8,9 +8,8 @@ namespace Nibo.Business.Interfaces
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {
-        Task Adicionar(TEntity entity);
-        Task<List<TEntity>> ObterTodos();
-        Task<TEntity> ObterPorId(Guid id);
+        Task Save(TEntity entity);
+       
     }
     
 }
