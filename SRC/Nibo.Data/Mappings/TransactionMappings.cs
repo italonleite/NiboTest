@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Nibo.Business.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nibo.Data.Mappings
 {
@@ -15,19 +12,19 @@ namespace Nibo.Data.Mappings
 
             builder.Property(t => t.Type)
                .HasColumnType("integer")
-               .HasColumnName("TRNTYPE");
+               .HasColumnName("Trntype");
 
             builder.Property(t => t.TransactionPostDate)
                 .HasColumnType("datetime")
-                .HasColumnName("DTPOSTED");
+                .HasColumnName("Dtposted");
 
             builder.Property(t => t.Amount)
-              .HasColumnType("decimal(5,2)")
-               .HasColumnName("TRNAMT");
+              .HasColumnType("decimal")
+               .HasColumnName("Trnamt");
 
             builder.Property(t => t.Memo)
               .HasColumnType("varchar(100)")
-               .HasColumnName("MEMO");
+               .HasColumnName("Memo");
 
             builder.HasOne(b => b.BankStatement)
                 .WithMany(t => t.Transactions);

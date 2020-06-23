@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nibo.Data.Context;
 
 namespace Nibo.Data.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200623151025_v4")]
+    partial class v4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,6 +27,18 @@ namespace Nibo.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Name")
+                        .HasColumnName("NAME")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime>("StatementEnd")
+                        .HasColumnName("DTEND")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("StatementStart")
+                        .HasColumnName("DTSTART")
+                        .HasColumnType("datetime");
+
                     b.HasKey("Id");
 
                     b.ToTable("BankStatements");
@@ -37,22 +51,22 @@ namespace Nibo.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Amount")
-                        .HasColumnName("Trnamt")
-                        .HasColumnType("decimal");
+                        .HasColumnName("TRNAMT")
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<Guid>("BankStatementId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Memo")
-                        .HasColumnName("Memo")
+                        .HasColumnName("MEMO")
                         .HasColumnType("varchar(100)");
 
                     b.Property<DateTime>("TransactionPostDate")
-                        .HasColumnName("Dtposted")
+                        .HasColumnName("DTPOSTED")
                         .HasColumnType("datetime");
 
                     b.Property<int>("Type")
-                        .HasColumnName("Trntype")
+                        .HasColumnName("TRNTYPE")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

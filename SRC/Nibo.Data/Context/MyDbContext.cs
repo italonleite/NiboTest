@@ -18,7 +18,7 @@ namespace Nibo.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }

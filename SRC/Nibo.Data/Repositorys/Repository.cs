@@ -19,26 +19,11 @@ namespace Nibo.Data.Repository
             Db = db;
             DbSet = db.Set<TEntity>();
         }
-
-        //virtual, para poder fazer um override quando precisar.
-
-        public virtual async Task<TEntity> ObterPorId(Guid id)
+        public Repository()
         {
-            return await DbSet.FindAsync(id);
-        }
-                
 
-        public virtual async Task<List<TEntity>> ObterTodos()
-        {
-            return await DbSet.ToListAsync();
         }
 
-        public virtual async Task Adicionar(TEntity entity)
-        {
-            DbSet.Add(entity);
-            await SaveChanges();
-        }
-      
 
         public virtual async Task<int> SaveChanges()
         {
@@ -48,6 +33,11 @@ namespace Nibo.Data.Repository
         {
             Db?.Dispose();
         }
-              
+
+        public async Task Save(TEntity entity)
+        {
+            DbSet.Add(entity);
+            await SaveChanges();
+        }
     }
 }
