@@ -10,16 +10,11 @@ namespace Nibo.App.ViewModel
 {
     public class BankStatementViewModel
     {
+
         [Key]
         public Guid Id { get; set; }
 
-        public string Name { get; set; }
-        
-        public IFormFile Ofx { get; set; }
-
-        public DateTime StatementStart { get; set; }
-
-        public DateTime StatementEnd { get; set; }
+        public IFormFile FileUpload { get; set; }
 
         public IEnumerable<TransactionViewModel> Transactions { get; set; }
     }

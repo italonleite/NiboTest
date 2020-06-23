@@ -9,26 +9,43 @@
 <h4>BankStatementViewModel</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="col-md-6">
+        <form enctype="multipart/form-data" asp-action="Create">
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StatementStart" class="control-label"></label>
-                <input asp-for="StatementStart" class="form-control" />
-                <span asp-validation-for="StatementStart" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StatementEnd" class="control-label"></label>
-                <input asp-for="StatementEnd" class="form-control" />
-                <span asp-validation-for="StatementEnd" class="text-danger"></span>
+                <label class="control-label">Upload</label>
+
+
+                <div class="form-group">
+                    <label asp-for="FileUpload" class="control-label"></label>
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="FileUpload" asp-for="FileUpload">
+                        <label data-browse="Procurar" style="width: 400px" class="custom-file-label" for="FileUpload"></label>
+                        <label style="display: none" id="img_nome"></label>
+                    </div>
+
+                </div>
+
+
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <strong>@ViewData["Message"]</strong>
+                <strong>@ViewData["erro"]</strong>
+            </div>
+        </form>
+
+        <form enctype="multipart/form-data" asp-action="Index">
+            <div class="form-group">
+                <input type="submit" value="View Records" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <form enctype="multipart/form-data" asp-action="RemoveRecords">
+
+            <div class="form-group">
+                <input type="submit" value="Remove all records " class="btn btn-primary" />
+                <strong>@ViewData["remove"]</strong>
             </div>
         </form>
     </div>
@@ -37,7 +54,17 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $("#FileUpload").change(function () {
+            $("#img_nome").text(this.files[0].name);
+            $("#img_nome")[0].style.display = 'block';
+        });
+
+        $("#FileUpload").attr("data-val", "true");
+        $("#FileUpload").attr("data-val-required", "Preencha o campo Imagem");
+    </script>
 }
+

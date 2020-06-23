@@ -20,6 +20,11 @@
     <ProjectReference Include="..\Nibo.Data\Nibo.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\NewFolder1\" />
+    <Folder Include="wwwroot\NewFolder\NewFolder\" />
+  </ItemGroup>
+
 
 
 </Project>
